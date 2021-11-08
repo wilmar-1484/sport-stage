@@ -1,0 +1,7 @@
+{
+  "name": "SportStage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "SportStage",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
