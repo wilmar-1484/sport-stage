@@ -15,25 +15,42 @@
       <ion-card-title color="success">Login</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <form [FormGroup]="formularioLogin">
+      <form FormGroup="formularioLogin">
+
+        <ion-item>
+          <ion-label position="floating" color="success">Selecione documento</ion-label>
+          <ion-select value="Documento" [interfaceOptions]="customOptions" interface="action-sheet" placeholder="Select ">
+            <ion-select-option value="cedula de ciudadania">Cedula de ciudadania</ion-select-option>
+            <ion-select-option value="cedula extrangera">Cedula extrangera</ion-select-option>
+            <ion-select-option value="registro">Registro</ion-select-option>
+            <ion-select-option value="tarjeta identidad">Targeta identidad</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
     
         <ion-item>
-          <ion-label position="floating" color="success">E-Mail <ion-text color="danger"></ion-text></ion-label>
-          <ion-input required FormControl=nombre type="text"></ion-input>
+          <ion-label position="floating" color="success">Numero de documento <ion-text color="danger"></ion-text></ion-label>
+          <ion-input required FormControl=numero type="numero"></ion-input>
         </ion-item>
         <br>
         <ion-item>
           <ion-label position="floating"color="success">Password <ion-text color="danger">*</ion-text></ion-label>
           <ion-input required FormControl="password" type="password"></ion-input>
         </ion-item>
-        <br>
+        <br><br>
+
         <ion-button routerLink='/inicio' block color="success" type="submit" >
           Ingresar
         </ion-button>
         <ion-button routerLink='/registro' block color="success" type="submit" >
           Registrarse
-        </ion-button>
+        </ion-button><br>
         
+              
+        <ion-item>
+          <ion-label color="success">recordarme</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+        </ion-item>
       </form>
     </ion-card-content>
   </ion-card>
