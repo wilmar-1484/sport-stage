@@ -1,0 +1,55 @@
+{% extends 'barra.html' %}
+{% block content %}
+{% load static %}
+  <body>    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                #Reserva
+                            </th>
+                            <th>
+                                Fecha
+                            </th>
+                            <th>
+                                Esenario
+                            </th>
+                            <th>
+                                Usuario
+                            </th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in reserv %}
+                        <tr>
+                            <td>
+                                {{r.id}}
+                            </td>
+                            <td>
+                                {{r.fecha}}
+                            </td>
+                            <td>
+                                {{r.enombre}}
+                            </td>
+                            <td>
+                                {{r.unombre}}
+                            </td>
+                            <td>
+                                <button class="btn btn-danger"><a href="{% url 'eliminarReserva' r.id %}">eliminar</a></button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+
+{% endblock %}
